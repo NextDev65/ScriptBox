@@ -1,0 +1,5 @@
+@echo off
+
+ffprobe -v quiet -print_format json -show_format -show_streams %*
+
+EXIT /b

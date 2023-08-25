@@ -1,0 +1,12 @@
+*.exe
+*.dll
+*.jar
+*.com
+*.conf
+Desktop.ini
+apktool.bat
+Caddyfile
+megatools/
+andip.txt
+platform-tools/
+cdc

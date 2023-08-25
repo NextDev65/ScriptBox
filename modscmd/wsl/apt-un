@@ -1,0 +1,3 @@
+#!/bin/sh
+#sudo apt purge $1 && apt-ar
+sudo apt-get purge --auto-remove $1

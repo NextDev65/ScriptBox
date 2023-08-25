@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -std=c99 -D_XOPEN_SOURCE=700 ${@:2} -Wall -Werror $1 -o `echo $1 | sed 's/\.c//g'`
