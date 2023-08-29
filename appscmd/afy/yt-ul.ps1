@@ -14,6 +14,7 @@ function UploadToYouTube([String]$filename, [String]$description = '""') {
     
     # Delete the file after uploading successfully
     If ($?) { Remove-Item $filename }
+    Else {Read-Host -Prompt "Press Enter to exit"}
 }
 
 # Get a sorted list of .mp4 files in the current directory
