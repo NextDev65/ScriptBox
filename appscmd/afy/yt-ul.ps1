@@ -8,17 +8,20 @@ param (
     [String]$Merged
 )
 
-function UploadToYouTube([String]$filename, [String]$description = '""') {
+function UploadToYouTube([String]$filename, [String]$description = '') {
     # Upload the file to YouTube using youtube-uploader
-    youtube-uploader -filename $filename -secrets client_secret_40253407573-0svqts338qd0hdihnd047dkqme7b8l0q.apps.googleusercontent.com.json -description $description
+    youtubeuploader -filename $filename -secrets (Get-Item .\client_secret*.json).Name -description $description
     
     # Delete the file after uploading successfully
-    If ($?) { Remove-Item $filename }
-    Else {Read-Host -Prompt "Press Enter to exit"}
+    If ($?) { Remove-Item -Path $filename }
+    Else {
+        if ($description) {$description | Out-File description.txt}
+        Read-Host -Prompt "Press Enter to exit"
+    }
 }
 
-# Get a sorted list of .mp4 files in the current directory
-$mp4 = Get-ChildItem -Filter *.mp4 | Sort-Object LastWriteTime
+# Get a sorted list (Date Created, Ascending) of .mp4 files in the current directory
+$mp4 = Get-ChildItem -Filter *.mp4 | Sort-Object CreationTime
 
 If ($Merged) {    
     # Build description with timestamps and filenames

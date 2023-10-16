@@ -10,6 +10,7 @@ echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
 
 winget upgrade --id Microsoft.WindowsTerminal --source winget
 
-
+winget upgrade --id WinMerge.WinMerge --source winget
+winget upgrade --id LinwoodCloud.Butterfly --source winget
 winget upgrade --id YetAnotherPomodoroApp.YAPA2 --source winget
 winget upgrade --id zxch3n.PomodoroLogger --source winget

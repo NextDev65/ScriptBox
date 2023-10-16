@@ -2,7 +2,9 @@
 
 set inpvid=%~nx1
 
-mkdir xfonts && cd xfonts
+echo.%inpvid%
+IF NOT EXIST "%inpvid%.fonts" (mkdir "%inpvid%.fonts")
+cd "%inpvid%.fonts"
 
 ffmpeg -dump_attachment:t "" -i "..\%inpvid%"
 

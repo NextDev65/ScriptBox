@@ -1,6 +1,5 @@
 @echo off
 
-::aria2c.exe --max-tries 0 --retry-wait 180 --max-connection-per-server 1 %*
-aria2c.exe --max-tries 0 --retry-wait 180 --split 1 %*
+aria2c.exe --max-tries 0 --retry-wait 180 --split 1 --async-dns-server="1.1.1.1, 1.0.0.1" %*
 
 EXIT /b

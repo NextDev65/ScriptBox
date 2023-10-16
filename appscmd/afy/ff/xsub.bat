@@ -18,4 +18,7 @@ IF "%2"=="ass" (ffmpeg -i "%inpvid%" "%~n1.ass")
 IF "%2"=="srt" (ffmpeg -i "%inpvid%" "%~n1.srt")
 IF "%2"=="vob" (ffmpeg -i "%inpvid%" "%~n1.vob")
 
+::https://nicolasbouliane.com/blog/ffmpeg-extract-subtitles
+::ffmpeg -i input.mkv -map "0:m:language:eng" -map "-0:v" -map "-0:a" output.ass
+
 EXIT /b
