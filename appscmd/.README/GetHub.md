@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-- GitHub Repository: The GitHub repo you are updating from should be public. If not, you should have access to it and use the `Token` parameter as mentioned below.
+- **GitHub Repository**: The GitHub repository you are fetching assets from should be public. If it's a private repository, you should have access to it and must use the `Token` parameter for authentication as mentioned below.
 
 ## Parameters
 
@@ -25,6 +25,8 @@ The script accepts the following parameters:
 1. Open a PowerShell terminal.
 
 2. Run the script using the following command: 
-`.\GetHub.ps1 -Owner "username" -Repo "repository" -RegexPattern "regex pattern"`
+`.\GetHub.ps1 -Owner 'username' -Repo 'repository' -RegexPattern 'regex pattern'`
 
-This will download the asset from the latest release matching the regex pattern.
+The script will connect to the GitHub API, retrieve the latest release information, filter assets based on the regex pattern, and download the matching asset(s) to the current directory.
+
+After the script finishes, it will **return** the *name of the last downloaded asset*.

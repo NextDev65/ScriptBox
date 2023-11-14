@@ -14,8 +14,6 @@
 
 2. Run the script by executing the following command: `choco-up.bat`
 
-This will execute the script, which performs the following steps:
-
 - Lists all outdated Chocolatey packages using `choco outdated`.
 
 - Asks if you want to upgrade all outdated packages.

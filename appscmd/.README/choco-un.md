@@ -12,7 +12,7 @@
 
 1. Open a command prompt with administrator privileges. (to allow it to make system changes)
 
-2. Run the script by executing the following command: `choco-un <package-name>`
+2. Run the script by executing the following command: `choco-un "package-name"`
 
 This will uninstall the specified Chocolatey package along with its dependencies.
 

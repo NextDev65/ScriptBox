@@ -13,7 +13,7 @@ function UploadToYouTube([String]$filename, [String]$description = '') {
     youtubeuploader -filename $filename -secrets (Get-Item .\client_secret*.json).Name -description $description
     
     # Delete the file after uploading successfully
-    If ($?) { Remove-Item -Path $filename }
+    If ($?) { Remove-Item -LiteralPath $filename }
     Else {
         if ($description) {$description | Out-File description.txt}
         Read-Host -Prompt "Press Enter to exit"
@@ -60,6 +60,7 @@ If ($Merged) {
     # Merge all .mp4 files in the current directory (oldest first)
     $mp4list = $mp4 | Resolve-Path -Relative
     $OutputFileName = merge @mp4list -BaseName $Merged
+    #Exit
     
     # UploadToYouTube
     UploadToYouTube $OutputFileName $Description
