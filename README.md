@@ -29,4 +29,9 @@ Scripts
 * [choco-up](appscmd/.README/choco-up.md)
 * [GetHub](appscmd/.README/GetHub.md)
 
+### Todo
+___
+- add readme for all scripts
+- update GetHub.md
+
 > Written with [StackEdit](https://stackedit.io/).
