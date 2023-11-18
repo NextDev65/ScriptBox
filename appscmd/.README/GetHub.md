@@ -1,4 +1,4 @@
-# GetHub.ps1
+# [GetHub.ps1](appscmd/GetHub.ps1)
 
 ## Description
 
