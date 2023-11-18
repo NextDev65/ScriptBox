@@ -25,7 +25,7 @@ If ($FileName)
     $apiUrl = "https://github.com/$Owner/$Repo/releases/latest/download/$FileName"
     
     # Download file
-    Invoke-WebRequest -Uri $apiUrl -OutFile $FileName
+    $stats = Invoke-WebRequest -Uri $apiUrl -OutFile $FileName -Resume
     $assetName = $FileName
 }
 Else # ($RegexPattern)
@@ -59,7 +59,7 @@ Else # ($RegexPattern)
             foreach ($asset in $filteredAssets) {
                 $downloadUrl = $asset.browser_download_url
                 $assetName = $asset.name
-                Invoke-WebRequest -Uri $downloadUrl -OutFile $assetName
+                $stats = Invoke-WebRequest -Uri $downloadUrl -OutFile $assetName -Resume
                 Write-Host "Downloaded: $assetName"
             }
             Write-Host "Assets downloaded from the latest release '$latestReleaseName'."
