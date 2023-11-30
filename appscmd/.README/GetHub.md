@@ -26,7 +26,7 @@ The script accepts the following parameters:
 
 1. Open a PowerShell terminal.
 
-2. Run the script using the following command: 
+2. Run the script using either of the following commands: 
 
 `GetHub -Owner 'username' -Repo 'repository' -FileName 'file name'`
 
