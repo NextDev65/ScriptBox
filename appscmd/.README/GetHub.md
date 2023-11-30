@@ -27,7 +27,9 @@ The script accepts the following parameters:
 1. Open a PowerShell terminal.
 
 2. Run the script using the following command: 
+
 `GetHub -Owner 'username' -Repo 'repository' -FileName 'file name'`
+
 `GetHub -Owner 'username' -Repo 'repository' -RegexPattern 'regex pattern'`
 
 The script will connect to the GitHub API, retrieve the latest release information, filter assets based on the file name or regex pattern, and download the matching asset(s) to the current directory.
