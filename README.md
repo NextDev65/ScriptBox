@@ -13,6 +13,7 @@ Local Install: Run in one folder only
 * Click the address bar (The long box with the folder path)
 * Type `cmd` or `powershell` and hit enter
 * In the console window that pops up, you can run the script
+	* `powershell` scripts need to start with `.\`  and end with `.ps1` (ex: `.\Script.ps1 -Param 'Arg'`)
 * Keep in mind that running the script from another folder is only possible with relative or absolute paths (ie: `C:\scripts\ffmpeg\ff-u` instead of just `ff-u`)
 
 ### Prerequisites
@@ -32,6 +33,5 @@ Scripts
 ### Todo
 ___
 - add readme for all scripts
-- update GetHub.md
 
 > Written with [StackEdit](https://stackedit.io/).

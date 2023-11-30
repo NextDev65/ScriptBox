@@ -1,5 +1,5 @@
-# GetHub -Owner 'username' -Repo 'repository' -FileName 'filename'
-# GetHub -Owner 'username' -Repo 'repository' -RegexPattern 'regex_pattern'
+# GetHub -Owner 'username' -Repo 'repository' -FileName 'file name'
+# GetHub -Owner 'username' -Repo 'repository' -RegexPattern 'regex pattern'
 
 [CmdletBinding()]
 param (

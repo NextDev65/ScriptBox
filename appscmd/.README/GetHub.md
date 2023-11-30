@@ -2,7 +2,7 @@
 
 ## Description
 
-`GetHub.ps1` is a PowerShell script designed to fetch the latest release assets from a GitHub repository. It takes the repository owner, repository name, and a regex pattern as parameters, and then fetches and downloads the release assets that match the given pattern.
+`GetHub.ps1` is a PowerShell script designed to fetch the latest release assets from a GitHub repository. You can provide either a file name to get a specific file or a regex pattern to get a file with a matching file name.
 
 ## Prerequisites
 
@@ -16,6 +16,8 @@ The script accepts the following parameters:
 
 - `Repo`: The name of the GitHub repository.
 
+-  `FileName`: The name of the file in release assets. 
+
 - `RegexPattern`: A regular expression pattern used to filter release assets by name.
 
 **Note:** The `Token` parameter is currently commented out but can be uncommented and used for authentication if necessary.
@@ -25,8 +27,9 @@ The script accepts the following parameters:
 1. Open a PowerShell terminal.
 
 2. Run the script using the following command: 
-`.\GetHub.ps1 -Owner 'username' -Repo 'repository' -RegexPattern 'regex pattern'`
+`GetHub -Owner 'username' -Repo 'repository' -FileName 'file name'`
+`GetHub -Owner 'username' -Repo 'repository' -RegexPattern 'regex pattern'`
 
-The script will connect to the GitHub API, retrieve the latest release information, filter assets based on the regex pattern, and download the matching asset(s) to the current directory.
+The script will connect to the GitHub API, retrieve the latest release information, filter assets based on the file name or regex pattern, and download the matching asset(s) to the current directory.
 
-After the script finishes, it will **return** the *name of the last downloaded asset*.
+After the script finishes, it will **return** the *file name of the last downloaded asset*.
