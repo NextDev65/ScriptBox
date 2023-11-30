@@ -25,13 +25,17 @@ $OutputFileName = $OutputBaseName + (Get-Item $InputFiles[0]).Extension
 
 # Create a temporary file containing "file 'inputFilePath'" entries for FFmpeg
 #$InputFiles | ForEach-Object { "file '" + ($i).replace('`','') + "'" } | Out-File -Append -Encoding Default -FilePath mergein.txt
-foreach ($i in $InputFiles) { "file '" + ($i).replace('`','') + "'" | Out-File -Append -Encoding Default -FilePath mergein.txt}
+#foreach ($i in $InputFiles) { "file '" + ($i).replace('`','') + "'" | Out-File -Append -Encoding Default -FilePath mergein.txt }
+$InputFiles = $InputFiles.replace('`','')
+foreach ($i in $InputFiles) { "file '$i'" | Out-File -Append -Encoding Default -FilePath mergein.txt }
 
 # Use FFmpeg to concatenate and merge the input files into the output file
 ffmpeg.exe -safe 0 -f concat -i mergein.txt -c copy $OutputFileName
+$fferror = $?
 
 # Clean up by removing the temporary and input files
 Remove-Item -Path mergein.txt
-Remove-Item -LiteralPath $InputFiles
+If ($fferror) { Remove-Item -LiteralPath $InputFiles }
+Else { Read-Host -Prompt "Press Enter to exit" }
 
 Return $OutputFileName
