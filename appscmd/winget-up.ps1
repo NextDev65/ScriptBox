@@ -8,6 +8,7 @@ winget upgrade --silent --id Microsoft.PowerShell --source winget --custom ($Par
 echo DOTNET_CLI_TELEMETRY_OPTOUT $env:DOTNET_CLI_TELEMETRY_OPTOUT
 echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
 
+winget upgrade --silent --id Microsoft.PowerToys --source winget
 winget upgrade --silent --id Microsoft.WindowsTerminal --source winget
 
 winget upgrade --silent --id LinwoodCloud.Butterfly --source winget
