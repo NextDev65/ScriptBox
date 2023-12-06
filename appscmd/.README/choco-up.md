@@ -1,4 +1,4 @@
-# [choco-up.bat](appscmd/choco-up.bat)
+# [choco-up.bat](/appscmd/choco-up.bat)
 
 ## Description
 

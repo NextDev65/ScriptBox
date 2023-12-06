@@ -1,4 +1,4 @@
-# [choco-un.bat](appscmd/choco-un.bat)
+# [choco-un.bat](/appscmd/choco-un.bat)
 
 ## Description
 
