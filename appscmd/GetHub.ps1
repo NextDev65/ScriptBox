@@ -44,7 +44,8 @@ Else # ($RegexPattern)
 
     # Check if the request was successful
     if ($response) {
-        $latestReleaseName = $response.name
+        # if name is empty use tag_name
+        $latestReleaseName = if ($response.name) { $response.name } else { $response.tag_name }
         $assets = $response.assets
 
         # Filter assets based on the regex pattern
