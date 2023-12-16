@@ -11,6 +11,7 @@ echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
 winget upgrade --silent --id Microsoft.PowerToys --source winget
 winget upgrade --silent --id Microsoft.WindowsTerminal --source winget
 
+winget upgrade --silent --id Genymobile.scrcpy --source winget
 winget upgrade --silent --id LinwoodCloud.Butterfly --source winget
 winget upgrade --silent --id YetAnotherPomodoroApp.YAPA2 --source winget
 winget upgrade --silent --id zxch3n.PomodoroLogger --source winget
