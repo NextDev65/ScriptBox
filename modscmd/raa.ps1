@@ -1,1 +1,1 @@
-Start-Process powershell -verb runAs -ArgumentList '-NoExit', '-Command', "cd $pwd"
+Start-Process powershell -verb runAs -ArgumentList '-NoExit', '-Command', "cd '$pwd'"
