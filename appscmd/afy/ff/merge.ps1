@@ -14,6 +14,9 @@ param (
 #Write-Host "BaseName: " $BaseName ""
 #Write-Host "args: " $args ""
 
+# Get the last modified date of first input file
+$lastModifiedTime = (Get-ItemProperty -Path $InputFiles[0]).LastWriteTime
+
 # Combine the base names of input files for creating the output file name
 If (-Not $BaseName) {
     $OutputBaseName = ($InputFiles | ForEach-Object { (Get-Item $_).BaseName }) -join ", "
@@ -33,9 +36,13 @@ foreach ($i in $InputFiles) { "file '$i'" | Out-File -Append -Encoding Default -
 ffmpeg.exe -safe 0 -f concat -i mergein.txt -c copy $OutputFileName
 $fferror = $?
 
+# Set the last modified date of output file (to that of first input file)
+Set-ItemProperty -Path $OutputFileName -Name LastWriteTime -Value $lastModifiedTime
+
 # Clean up by removing the temporary and input files
 Remove-Item -Path mergein.txt
 If ($fferror) { Remove-Item -LiteralPath $InputFiles }
 Else { Read-Host -Prompt "Press Enter to exit" }
 
 Return $OutputFileName
+
