@@ -1,9 +1,11 @@
 # PWSH
 
-# list        | randpick 1 | relative path
-Get-ChildItem | Get-Random | Resolve-Path -Relative
-# list files only, recurse   | randpick 1 | relative path
+# list                       | randpick 1 | relative path
+#Get-ChildItem | Get-Random | Resolve-Path -Relative
+# list, recurse              | randpick 1 | relative path
 Get-ChildItem -Recurse -File | Get-Random | Resolve-Path -Relative
+# list files only, recurse   | randpick 1 | relative path
+#Get-ChildItem -Recurse -File | Get-Random | Resolve-Path -Relative
 
 
 # WSL
