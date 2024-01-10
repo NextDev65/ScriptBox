@@ -45,4 +45,3 @@ If ($fferror) { Remove-Item -LiteralPath $InputFiles }
 Else { Read-Host -Prompt "Press Enter to exit" }
 
 Return $OutputFileName
-
