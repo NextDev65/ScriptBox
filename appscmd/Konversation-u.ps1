@@ -5,16 +5,13 @@ $url = "https://binary-factory.kde.org/job/Konversation_Release_win64/lastSucces
 # Path to temporary directory
 $tempDir = [System.IO.Path]::GetTempPath()
 
-# Path to 7zo.bat
-#$7zobat = "7zo.bat"
-
 # Download the zip file
 $zipPath = Join-Path $tempDir "Konversation-u.zip"
 Invoke-WebRequest -Uri $url -OutFile $zipPath
 
 # Use 7zo.bat to extract the zip file
 $extractedPath = [System.IO.Path]::Combine($tempDir, "Konversation-u")
-#Start-Process -FilePath $7zobat -ArgumentList "$zipPath $extractedPath" -Wait
+#Start-Process -FilePath 7zo.bat -ArgumentList "$zipPath $extractedPath" -Wait
 7zo.bat $zipPath $extractedPath
 
 # Find the executable file inside the extracted folder
