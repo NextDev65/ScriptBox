@@ -25,8 +25,12 @@ If ($FileName)
     $apiUrl = "https://github.com/$Owner/$Repo/releases/latest/download/$FileName"
     
     # Download file
-    $stats = Invoke-WebRequest -Uri $apiUrl -OutFile $FileName -Resume
+    Invoke-WebRequest -Uri $apiUrl -OutFile $FileName -Resume
     $assetName = $FileName
+
+    $currentDate = Get-Date
+    Write-Host "Downloaded: $assetName"
+    Write-Host "Assets downloaded from the latest release as of $currentDate."
 }
 Else # ($RegexPattern)
 {
@@ -54,7 +58,7 @@ Else # ($RegexPattern)
         if ($filteredAssets.Count -eq 0) {
             Write-Host "No assets match the regex pattern '$RegexPattern' in the latest release '$latestReleaseName'."
         #} elseif ($filteredAssets.Count -gt 1) {
-        #    Write-Host "Multiple assets match the regex pattern '$RegexPattern' in the latest release '$latestReleaseName'. Refine the pattern."
+        #    Write-Host "Multiple assets match the regex pattern '$RegexPattern' in the latest release '$latestReleaseName'. Please refine the pattern."
         } else {
             # Download the filtered assets
             foreach ($asset in $filteredAssets) {
@@ -66,8 +70,8 @@ Else # ($RegexPattern)
             Write-Host "Assets downloaded from the latest release '$latestReleaseName'."
         }
     } else {
-        #Write-Host 'Failed to fetch release information from GitHub. Please check your credentials and repository details.'
         Write-Host 'Failed to fetch release information from GitHub. Please check repository details.'
+        #Write-Host 'Failed to fetch release information from GitHub. Please check your credentials and repository details.'
     }
 }
 
