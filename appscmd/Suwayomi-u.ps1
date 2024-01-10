@@ -1,4 +1,4 @@
-$assetName = GetHub -Owner 'Suwayomi' -Repo 'Tachidesk-Server-preview' -RegexPattern 'Tachidesk-Server-v.*-windows-x64.msi'
+$assetName = GetHub -Owner 'Suwayomi' -Repo 'Suwayomi-Server-preview' -RegexPattern 'Suwayomi-Server-v.*-windows-x64.msi'
 Write-Host "Running $assetName"
 #PS5# (Invoke-Expression $assetName) -and (Remove-Item $assetName)
 #PS7#
