@@ -33,5 +33,6 @@ Scripts
 ### Todo
 ___
 - add readme for all scripts
+- GetHub.ps1: add pre-releases
 
 > Written with [StackEdit](https://stackedit.io/).
