@@ -1,8 +1,8 @@
-# Get a list of all FLAC files in the current directory
-$flacFiles = Get-ChildItem -Filter "*.flac"
+# Get a list of all audio files in the current directory
+$audioFiles = Get-ChildItem .\* -Include *.flac, *.m4a
 
-# Loop through each FLAC file and generate a spectrogram
-foreach ($file in $flacFiles) {
+# Loop through each audio file and generate a spectrogram
+foreach ($file in $audioFiles) {
     $inputFile = $file.FullName
     $outputFile = Join-Path -Path $file.DirectoryName -ChildPath "$($file.BaseName).png"
 
@@ -13,6 +13,6 @@ foreach ($file in $flacFiles) {
     Write-Host "Generated spectrogram for $($file.Name) and saved as $($file.BaseName).png"
 }
 
-Write-Host "Spectrograms generated for all FLAC files in the current directory."
+Write-Host "Spectrograms generated for all audio files in the current directory."
 
 Exit
