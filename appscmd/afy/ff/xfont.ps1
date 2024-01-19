@@ -1,3 +1,5 @@
+# dump + overwrite attachments (fonts) to $extractDirectory
+
 $extractDirectory = 'xFonts'
 # Check if extract directory exists, if not create it
 if (-not (Test-Path -Path $extractDirectory -PathType Container)) {
