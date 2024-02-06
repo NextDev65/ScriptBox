@@ -3,4 +3,4 @@
 # terminates Ubuntu
 #wsl.exe --terminate Ubuntu
 # terminates all distros + WSL2 VM
-wsl.exe --shutdown 
+wsl.exe --shutdown
