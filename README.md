@@ -34,6 +34,7 @@ Scripts
 ___
 - add readme for all scripts
 - GetHub.ps1: add pre-releases
+  - https://stackoverflow.com/a/67689318
   - https://docs.github.com/en/rest/releases/releases
 
 > Written with [StackEdit](https://stackedit.io/).
