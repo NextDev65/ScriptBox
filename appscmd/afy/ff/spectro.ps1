@@ -1,5 +1,5 @@
 # Get a list of all audio files in the current directory
-$audioFiles = Get-ChildItem .\* -Include *.flac, *.m4a
+$audioFiles = Get-ChildItem .\* -Include *.flac, *.opus, *.m4a, *.mp3
 
 # Loop through each audio file and generate a spectrogram
 foreach ($file in $audioFiles) {
