@@ -40,7 +40,7 @@ $fferror = $?
 Set-ItemProperty -Path $OutputFileName -Name LastWriteTime -Value $lastModifiedTime
 
 # Clean up by removing the temporary and input files
-#DEBUG#Remove-Item -Path mergein.txt
+Remove-Item -Path mergein.txt
 If ($fferror) { Remove-Item -LiteralPath $InputFiles }
 Else { Read-Host -Prompt "Press Enter to exit" }
 
