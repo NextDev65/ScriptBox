@@ -18,7 +18,7 @@ winget upgrade --interactive --id Microsoft.PowerShell --source winget --custom 
 #echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
 
 # Firewall
-winget upgrade --silent --id Safing.Portmaster --source winget
+#winget upgrade --silent --id Safing.Portmaster --source winget
 
 # MS PowerToys
 winget upgrade --silent --id Microsoft.PowerToys --source winget
