@@ -1,10 +1,36 @@
 #TODO
-# make upgrade function
-#  exact id match `--exact`
+# if not installed, prompt to install
 #https://learn.microsoft.com/en-us/windows/package-manager/winget/install
+#https://learn.microsoft.com/en-us/windows/package-manager/winget/upgrade
+
+# upgrade an application using winget
+function Upgrade-Application {
+    param (
+        [string]$AppId,
+        [string]$Params = @(),
+        [switch]$Interactive = $false,
+        [switch]$Silent = $true
+    )
+    
+    $command = "winget upgrade --id $AppId --source winget"
+    
+    if ($Interactive) {
+        $command += " --interactive"
+    } elseif ($Silent) {
+        $command += " --silent"
+    }
+    
+    if ($Params) {
+        $customParams = $Params -join " "
+        $command += " --custom `"$customParams`""
+    }
+    
+    Write-Host "Upgrading $AppId ..."
+    Invoke-Expression $command
+}
 
 # PowerShell 7
-$Params = @(
+$PowerShellParams = @(
     "USE_MU="
     "ENABLE_MU="
     "ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL="
@@ -12,32 +38,31 @@ $Params = @(
     "ADD_PATH=1"
     "DISABLE_TELEMETRY=1"
 )
-winget upgrade --interactive --id Microsoft.PowerShell --source winget --custom ($Params -join " ")
-#winget upgrade --silent --id Microsoft.PowerShell --source winget --custom ($Params -join " ")
 #echo DOTNET_CLI_TELEMETRY_OPTOUT $env:DOTNET_CLI_TELEMETRY_OPTOUT
 #echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
+Upgrade-Application -AppId "Microsoft.PowerShell" -Interactive -Params $PowerShellParams
 
 # Firewall
-#winget upgrade --silent --id Safing.Portmaster --source winget
+#Upgrade-Application -AppId 'Safing.Portmaster'
 
 # MS PowerToys
-winget upgrade --silent --id Microsoft.PowerToys --source winget
+Upgrade-Application -AppId 'Microsoft.PowerToys'
 
 # Office Suite
-winget upgrade --silent --id TheDocumentFoundation.LibreOffice.LTS --source winget
+Upgrade-Application -AppId 'TheDocumentFoundation.LibreOffice.LTS'
 
 # Windows Terminal
-winget upgrade --silent --id Microsoft.WindowsTerminal --source winget
+Upgrade-Application -AppId 'Microsoft.WindowsTerminal'
 
 # Android Mirroring
-winget upgrade --silent --id Genymobile.scrcpy --source winget
+Upgrade-Application -AppId 'Genymobile.scrcpy'
 
 # Notes
-winget upgrade --silent --id LinwoodCloud.Butterfly --source winget
+Upgrade-Application -AppId 'LinwoodCloud.Butterfly'
 
 # Focus Timer
-winget upgrade --silent --id YetAnotherPomodoroApp.YAPA2 --source winget
-winget upgrade --silent --id zxch3n.PomodoroLogger --source winget
+Upgrade-Application -AppId 'YetAnotherPomodoroApp.YAPA2'
+Upgrade-Application -AppId 'zxch3n.PomodoroLogger'
 
 # Windows Tweaks
-winget upgrade --silent --id TeamSophia.SophiApp --source winget
+Upgrade-Application -AppId 'TeamSophia.SophiApp'
