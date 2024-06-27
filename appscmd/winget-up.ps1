@@ -5,10 +5,10 @@
 
 # PowerShell 7
 $Params = @(
-    "USE_MU=0"
-    "ENABLE_MU=0"
-    "ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=0"
-    "ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=0"
+    "USE_MU="
+    "ENABLE_MU="
+    "ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL="
+    "ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL="
     "ADD_PATH=1"
     "DISABLE_TELEMETRY=1"
 )
@@ -22,6 +22,9 @@ winget upgrade --interactive --id Microsoft.PowerShell --source winget --custom 
 
 # MS PowerToys
 winget upgrade --silent --id Microsoft.PowerToys --source winget
+
+# Office Suite
+winget upgrade --silent --id TheDocumentFoundation.LibreOffice.LTS --source winget
 
 # Windows Terminal
 winget upgrade --silent --id Microsoft.WindowsTerminal --source winget
