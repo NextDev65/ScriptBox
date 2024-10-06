@@ -42,6 +42,9 @@ $PowerShellParams = @(
 #echo POWERSHELL_TELEMETRY_OPTOUT $env:POWERSHELL_TELEMETRY_OPTOUT
 Upgrade-Application -AppId "Microsoft.PowerShell" -Interactive -Params $PowerShellParams
 
+# Text Search
+#Upgrade-Application -AppId 'JFLarvoire.Ag'
+
 # Firewall
 #Upgrade-Application -AppId 'Safing.Portmaster'
 
