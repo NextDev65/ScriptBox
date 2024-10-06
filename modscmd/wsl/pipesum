@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# paste numbers, then type 'EOF' and hit enter
+#awk '{sum += $1} END {print sum}' <<EOF
+
+# paste numbers, then Ctrl+D
+cat | awk '{sum += $1} END {print sum}'
