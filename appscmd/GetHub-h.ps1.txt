@@ -1,0 +1,10 @@
+﻿#GetHub.ps1 -Owner <string> -Repo <string> -FileName <string>
+#GetHub.ps1 -Owner <string> -Repo <string> -RegexPattern <string>
+
+#$assetName = GetHub -Owner 'RepoOwner' -Repo 'RepoName' -FileName 'FileName'
+#$assetName = GetHub -Owner 'RepoOwner' -Repo 'RepoName' -RegexPattern 'RegexPattern'
+
+Write-Host "Running $assetName"
+#PS5# (Invoke-Expression $assetName) -and (Remove-Item $assetName)
+#PS7#
+Start-Process $assetName -Wait && Remove-Item $assetName
