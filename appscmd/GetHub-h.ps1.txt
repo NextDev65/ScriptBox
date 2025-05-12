@@ -1,8 +1,21 @@
 ﻿#GetHub.ps1 -Owner <string> -Repo <string> -FileName <string>
 #GetHub.ps1 -Owner <string> -Repo <string> -RegexPattern <string>
+#GetHub.ps1 -HTML <string> -FileName <string>
+#GetHub.ps1 -HTML <string> -RegexPattern <string>
 
 #$assetName = GetHub -Owner 'RepoOwner' -Repo 'RepoName' -FileName 'FileName'
 #$assetName = GetHub -Owner 'RepoOwner' -Repo 'RepoName' -RegexPattern 'RegexPattern'
+#$assetName = GetHub -HTML 'HTMLURL' -FileName 'FileName'
+#$assetName = GetHub -HTML 'HTMLURL' -RegexPattern 'RegexPattern'
+
+# regex snippets
+# version match (8, 8.65, 8.65.45, ...) 
+# \d+[\.\d+]*
+
+# 7z unzip
+7z.exe x $assetName #-o'.'
+#7z.exe x $assetName -o'*'
+Remove-Item $assetName
 
 Write-Host "Running $assetName"
 #PS5# (Invoke-Expression $assetName) -and (Remove-Item $assetName)
